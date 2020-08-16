@@ -5,7 +5,7 @@ const resultItem = document.getElementById('resultItem');
 const lyric = 'https://api.lyrics.ovh/v1/';
 const showLyricItem = document.getElementById('showLyric');
 
-const getLyrics = () => { // api call for search result
+const getSearchResult = () => { // api call for search result
     fetch(`${apiLink}${searchValue.value}`)
         .then(res => res.json())
         .then(data => {
@@ -16,7 +16,7 @@ const getLyrics = () => { // api call for search result
 searchButton.addEventListener('click', () => { // search button event handler
     resultItem.innerHTML = '';
     showLyricItem.innerHTML = '';
-    getLyrics();
+    getSearchResult();
 });
 
 const createDivBySearchResult = (totalResult) => {// Take first 10 result item from the total search result
